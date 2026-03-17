@@ -3,7 +3,6 @@ for_kevin/
 TEACHING_NOTES.md
 
 # Hide course modules so they can be revealed progressively
-/module-01-intro-application-security/
 /module-02-secure-sdlc/
 /module-03-common-vulnerabilities/
 /module-04-input-validation-secure-coding/
