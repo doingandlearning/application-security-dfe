@@ -2,6 +2,23 @@
 
 Course materials for **Introduction to Application Security**: threats, secure SDLC, OWASP Top 10, secure coding, session/data protection, security testing, DevSecOps, and LLM/AI-assisted coding security.
 
+## Notes
+
+This repo will grow over the course of the time we have together (and possibly after).
+
+I'll try hard not to change any files that you might be working in once shared to avoid merge conflicts.
+
+The aim is for this repo to contain both the notes and the examples that will be used in our training.
+
+## Timings
+
+-   09.30 - 11.00 - Session 1
+-   11.00 - 11.15 - Coffee
+-   11.15 - 12.45 - Session 2
+-   12.45 - 13.45 - Lunch
+-   13.45 - 15.15 - Session 3
+-   15.15 - 15.30 - Coffee
+-   15.30 - 16.30 - Session 4
 
 ## Modules
 

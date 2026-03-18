@@ -101,6 +101,18 @@ Vulnerabilities are usually **unintentional**:
 
 ---
 
+## Exercise: Security news → threat family
+
+- <span class="fragment">Pick a recent security story (or I’ll provide one).</span>
+- <span class="fragment">In pairs/groups: answer</span>
+  - <span class="fragment">**What was the impact?** (data loss, account takeover, outage, fraud)</span>
+  - <span class="fragment">**Which threat family fits best?** (injection / IDOR / auth-session / data exposure)</span>
+  - <span class="fragment">**What single control would have reduced risk most?**</span>
+
+<span class="fragment">Goal: practise “spot the pattern” before we touch any tools.</span>
+
+---
+
 ## Threats vs. attack vectors
 
 - <span class="fragment">**Attack vector** = how an attacker reaches you (form, API, upload, header, webhook).</span>
