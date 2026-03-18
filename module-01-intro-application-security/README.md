@@ -7,7 +7,6 @@ Establish why application security matters in modern software development, intro
 ## Contents
 
 - **slides.md** — Session slides (Reveal.js/compatible).
-- **TEACHING_NOTES.md** — Instructor notes.
 - **demos/** — Demo scripts and prompts.
 - **exercises/** — Hands-on exercises.
 

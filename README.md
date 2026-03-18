@@ -2,18 +2,6 @@
 
 Course materials for **Introduction to Application Security**: threats, secure SDLC, OWASP Top 10, secure coding, session/data protection, security testing, DevSecOps, and LLM/AI-assisted coding security.
 
-## Course structure
-
-Instructor-only documents (outline, schedule, checklists, reviews, notes) are in **for_kevin/** and are not committed (see `.gitignore`).
-
-| Doc | Purpose |
-|-----|--------|
-| **for_kevin/COURSE_OUTLINE.md** | Audience, learning outcomes, module list. |
-| **for_kevin/DAY_SCHEDULE.md** | Three-day schedule. |
-| **for_kevin/BEFORE_DELIVERY.md** | Pre-course environment and materials checks. |
-| **for_kevin/PRE_DELIVERY_CHECKLIST.md** | Last-minute checklist. |
-| **for_kevin/DEMO_SCRIPTS_SUMMARY.md** | Index of demos. |
-| **for_kevin/WELCOME_SLIDES.md** | Welcome and housekeeping. |
 
 ## Modules
 
