@@ -46,7 +46,7 @@ OWASP Top 10 = most critical web app security risks.
 - <span class="fragment">**Broken access control (IDOR)** → access someone else’s data.</span>
 - <span class="fragment">**XSS** → run attacker‑controlled JS in a victim’s browser.</span>
 
-<span class="fragment">We’ll do 1–3 of these in DVWA/WebGoat/TrustyTickets depending on time.</span>
+<span class="fragment">We’ll do 1–3 of these in TrustyTickets depending on time.</span>
 
 ---
 

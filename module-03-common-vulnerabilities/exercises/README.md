@@ -1,17 +1,4 @@
-# Module 3 — Exercises
 
-This module is primarily **lab‑driven**. Below are two ready‑to‑run labs:
-
-- **Lab 3.1 — Exploit Common Vulnerabilities** (SQLi, IDOR, XSS).
-- **Lab 3.2 — One‑Line Fix Summary** (bridge from exploit to fix).
-
-You can run Lab 3.1 as the main hands‑on block (45–60 minutes) and optionally add Lab 3.2 as a short wrap‑up.
-
----
-
-## Lab 3.1: Exploit Common Vulnerabilities
-
-```markdown
 # Lab 3.1: Exploit Common Vulnerabilities
 
 ## Objective
@@ -335,5 +322,4 @@ Optional:
 ## Next Steps
 
 Module 4 will turn these one‑line summaries into concrete secure‑coding examples and exercises (parameterised queries, encoding, validation, and auth/authorisation patterns).
-```
 
