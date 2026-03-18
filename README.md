@@ -34,7 +34,6 @@ The aim is for this repo to contain both the notes and the examples that will be
 | 8 | [module-08-llm-security](module-08-llm-security/) | LLM and AI-Assisted Coding Security |
 | 9 | [module-09-summary-next-steps](module-09-summary-next-steps/) | Summary and Next Steps |
 
-Each module contains: **README.md**, **slides.md**, **TEACHING_NOTES.md**, **index.html**, **demos/**, **exercises/**.
 
 ## Deliberately vulnerable app
 
