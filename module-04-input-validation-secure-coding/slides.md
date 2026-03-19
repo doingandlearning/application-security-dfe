@@ -148,6 +148,25 @@ if (ticket.OwnerId != currentUserId && !currentUser.IsAdmin) return Forbid();
 
 ---
 
+---
+
+## Other causes of IDOR 
+
+- <span class="fragment">**Predictable IDs:** Sequential integers (e.g. `/tickets/101`, `/tickets/102`) make it easy for attackers to guess other resources.</span>
+- <span class="fragment">**Exposed direct keys:** User-controllable object IDs in URLs or forms, without ownership checks, enable access to others’ data.</span>
+- <span class="fragment">**Enumerations/list endpoints:** APIs that return all objects but don’t filter by user/role.</span>
+- <span class="fragment">**Missing or inconsistent authz checks:** Checks enforced in some endpoints, missing in others—a single miss leads to access flaws.</span>
+
+---
+
+
+- <span class="fragment">**Mitigations:** Use unguessable IDs (UUIDs), always enforce ownership or permissions on every access, and write tests for “user can’t read or update another user’s resource”.</span>
+
+---
+
+
+---
+
 ## Lab: Fix TrustyTickets (secure coding)
 
 We’ll fix the same issues we exploited:
