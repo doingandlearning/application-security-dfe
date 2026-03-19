@@ -3,7 +3,6 @@ for_kevin/
 TEACHING_NOTES.md
 
 # Hide course modules so they can be revealed progressively
-/module-06-security-testing/
 /module-07-secure-devops/
 /module-08-llm-security/
 /module-09-summary-next-steps/
@@ -54,3 +53,4 @@ Icon?
 .com.apple.timemachine.donotpresent
 
 app.db
+TrustyTickets/
