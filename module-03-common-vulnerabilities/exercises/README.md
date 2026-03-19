@@ -323,3 +323,4 @@ Optional:
 
 Module 4 will turn these one‑line summaries into concrete secure‑coding examples and exercises (parameterised queries, encoding, validation, and auth/authorisation patterns).
 
+rp

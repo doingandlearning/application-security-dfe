@@ -3,7 +3,6 @@ for_kevin/
 TEACHING_NOTES.md
 
 # Hide course modules so they can be revealed progressively
-/module-04-input-validation-secure-coding/
 /module-05-session-management-data-protection/
 /module-06-security-testing/
 /module-07-secure-devops/
@@ -55,3 +54,4 @@ Icon?
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
 
+app.db
