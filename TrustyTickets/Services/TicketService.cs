@@ -28,7 +28,7 @@ public class TicketService : ITicketService
             SELECT t.""Id"", t.""Title"", t.""Description"", t.""Status"", t.""OwnerId"", t.""AssignedToId"", t.""CreatedAt"", t.""UpdatedAt""
             FROM ""Tickets"" t
             INNER JOIN ""Users"" o ON t.""OwnerId"" = o.""Id""
-            WHERE (t.""OwnerId"" = {userId} OR t.""AssignedToId"" = {userId} OR { (isAdmin ? "1=1" : "0=1") })
+            WHERE (t.""OwnerId"" = {userId} OR t.""AssignedToId"" = {userId} OR {(isAdmin ? "1=1" : "0=1")})
             AND (t.""Title"" LIKE '%{searchRaw}%' OR t.""Description"" LIKE '%{searchRaw}%')";
         return await _db.Tickets
             .FromSqlRaw(sql)
