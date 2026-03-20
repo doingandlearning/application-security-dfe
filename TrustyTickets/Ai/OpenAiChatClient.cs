@@ -26,7 +26,8 @@ public sealed class OpenAiChatClient : ILlmChatClient
             {
                 model = _cfg.OpenAiModel,
                 messages = messages.Select(m => new { role = m.Role, content = m.Content }).ToArray(),
-                temperature = 0.2,
+                // Keep the output stable for parsing in a demo.
+                temperature = 0.4,
                 max_tokens = 400
             }),
             Encoding.UTF8,

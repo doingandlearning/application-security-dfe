@@ -26,7 +26,10 @@ public sealed class OllamaChatClient : ILlmChatClient
             stream = false,
             options = new
             {
-                temperature = 0.2
+                // Keep the output stable for parsing in a demo.
+                temperature = 0.4,
+                // Ask Ollama to return structured output when supported.
+                format = "json"
             }
         };
 

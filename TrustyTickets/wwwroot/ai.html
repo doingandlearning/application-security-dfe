@@ -45,10 +45,36 @@
       background: rgba(15, 23, 42, 0.9);
       color: #e5e7eb;
       cursor: pointer;
-      margin-right: 10px;
       margin-top: 10px;
+      margin-right: 0;
     }
     button.primary { border-color: rgba(56, 189, 248, 0.5); }
+    label {
+      display: block;
+      color: #94a3b8;
+      font-size: 0.9rem;
+      margin-top: 0;
+    }
+    .card.row {
+      align-items: flex-start;
+    }
+    .card.row > div {
+      display: flex;
+      flex-direction: column;
+      min-width: 260px;
+    }
+    .card.row > div:nth-child(1) {
+      flex: 1 1 260px;
+    }
+    .card.row > div:nth-child(2) {
+      flex: 0 1 220px;
+      min-width: 220px;
+    }
+    .card.row > div:nth-child(2) button {
+      width: fit-content;
+      align-self: flex-start;
+      margin-right: 0;
+    }
     pre {
       background: rgba(15, 23, 42, 0.9);
       border: 1px solid rgba(148, 163, 184, 0.2);
@@ -60,10 +86,62 @@
     }
     .row { display: flex; gap: 14px; flex-wrap: wrap; }
     .row > * { flex: 1 1 260px; }
+    /* Override: keep the "Quick templates" column narrower */
+    .card.row > div:nth-child(2) {
+      flex: 0 1 240px !important;
+      min-width: 240px;
+      max-width: 240px;
+    }
+    .card.row > div:nth-child(2) button {
+      width: 100%;
+      margin-right: 0;
+      text-align: center;
+    }
+    /* Narrow the "Ticket ID" field so it doesn't dominate the row */
+    .card.row > div:nth-child(1) {
+      flex: 0 1 320px !important;
+      min-width: 280px;
+      max-width: 320px;
+    }
+    #ticketIdInput {
+      max-width: 200px;
+    }
     .muted { color: #94a3b8; }
     .commentItem { border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 12px; padding: 12px; margin: 10px 0; }
     .commentItem .author { font-weight: 600; margin-bottom: 6px; }
     .error { color: #f97373; white-space: pre-wrap; }
+
+    /* Stable layout for the top controls (ticket left, templates right) */
+    .top-controls {
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .top-controls > .controls-left,
+    .top-controls > .controls-right {
+      flex: 0 0 auto !important;
+      min-width: unset !important;
+      max-width: unset !important;
+      width: 320px;
+      display: flex;
+      flex-direction: column;
+    }
+    .top-controls > .controls-left {
+      width: 240px;
+    }
+    .top-controls > .controls-right {
+      width: 320px;
+    }
+    .top-controls #ticketIdInput {
+      max-width: none !important;
+      width: 100% !important;
+    }
+    .top-controls #loadTicketBtn {
+      width: 100% !important;
+    }
+    .top-controls .controls-right button {
+      width: 100% !important;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -73,13 +151,13 @@
 
     <div id="error" class="error" aria-live="polite"></div>
 
-    <div class="card row">
-      <div>
+    <div class="card row top-controls">
+      <div class="controls-left">
         <label>Ticket ID</label>
         <input id="ticketIdInput" type="text" placeholder="e.g. 1" />
         <button class="primary" id="loadTicketBtn">Load ticket</button>
       </div>
-      <div>
+      <div class="controls-right">
         <label>Quick templates</label>
         <button id="useBenignBtn" type="button">Use benign comment</button>
         <button id="useInjectionBtn" type="button">Use prompt injection comment</button>
@@ -88,13 +166,13 @@
 
     <div class="card">
       <h2>Comments</h2>
-      <div id="comments"></div>
-
       <div style="margin-top: 10px;">
         <label>Add a new comment</label>
         <textarea id="newCommentBody" placeholder="Write a comment that will later be summarised by the AI..."></textarea>
         <button id="addCommentBtn" type="button">Add comment</button>
       </div>
+
+      <div id="comments"></div>
     </div>
 
     <div class="card">

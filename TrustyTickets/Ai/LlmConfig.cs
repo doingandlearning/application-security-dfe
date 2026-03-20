@@ -6,7 +6,7 @@ public sealed class LlmConfig
 
     // Ollama
     public string OllamaUrl { get; init; } = "http://localhost:11434";
-    public string OllamaModel { get; init; } = "llama3:8b";
+    public string OllamaModel { get; init; } = "llama3:latest";
 
     // OpenAI
     public string OpenAiApiKey { get; init; } = string.Empty;
@@ -21,7 +21,8 @@ public sealed class LlmConfig
         {
             Provider = "ollama",
             OllamaUrl = "http://localhost:11434",
-            OllamaModel = "llama3:8b",
+            // Matches an existing local Ollama model from your `ollama list`
+            OllamaModel = "llama3:latest",
             OpenAiApiKey = string.Empty
         };
 
@@ -38,7 +39,7 @@ public sealed class LlmConfig
         OpenAiBaseUrl = "https://api.openai.com",
         // Ollama fields not used in openai mode
         OllamaUrl = "http://localhost:11434",
-        OllamaModel = "llama3:8b"
+        OllamaModel = "llama3:latest"
     };
     */
     }
