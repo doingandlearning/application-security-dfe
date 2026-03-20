@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>AI Comment Summaries — Prompt Injection Demo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 60%, #000 100%);
+      color: #e5e7eb;
+      padding: 24px;
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    h1 { margin-top: 0; }
+    .card {
+      background: rgba(2, 6, 23, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 14px;
+      padding: 16px;
+      margin: 14px 0;
+    }
+    input, textarea, button {
+      font: inherit;
+    }
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.8);
+      color: #e5e7eb;
+      margin-top: 8px;
+    }
+    textarea { min-height: 90px; resize: vertical; }
+    button {
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.9);
+      color: #e5e7eb;
+      cursor: pointer;
+      margin-right: 10px;
+      margin-top: 10px;
+    }
+    button.primary { border-color: rgba(56, 189, 248, 0.5); }
+    pre {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      padding: 12px;
+      border-radius: 12px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin: 10px 0 0 0;
+    }
+    .row { display: flex; gap: 14px; flex-wrap: wrap; }
+    .row > * { flex: 1 1 260px; }
+    .muted { color: #94a3b8; }
+    .commentItem { border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 12px; padding: 12px; margin: 10px 0; }
+    .commentItem .author { font-weight: 600; margin-bottom: 6px; }
+    .error { color: #f97373; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>AI Comment Summaries</h1>
+    <p class="muted">Demo: the same comment can be treated as instructions in <code>unsafe</code> mode (prompt injection).</p>
+
+    <div id="error" class="error" aria-live="polite"></div>
+
+    <div class="card row">
+      <div>
+        <label>Ticket ID</label>
+        <input id="ticketIdInput" type="text" placeholder="e.g. 1" />
+        <button class="primary" id="loadTicketBtn">Load ticket</button>
+      </div>
+      <div>
+        <label>Quick templates</label>
+        <button id="useBenignBtn" type="button">Use benign comment</button>
+        <button id="useInjectionBtn" type="button">Use prompt injection comment</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Comments</h2>
+      <div id="comments"></div>
+
+      <div style="margin-top: 10px;">
+        <label>Add a new comment</label>
+        <textarea id="newCommentBody" placeholder="Write a comment that will later be summarised by the AI..."></textarea>
+        <button id="addCommentBtn" type="button">Add comment</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Generate AI summary</h2>
+      <p class="muted">Select comment checkboxes above. If none are selected, we summarise all.</p>
+      <button class="primary" id="summarizeUnsafeBtn" type="button">Unsafe AI summary</button>
+      <button id="summarizeSafeBtn" type="button">Safe AI summary</button>
+
+      <div style="margin-top: 16px;">
+        <div><b>Result:</b></div>
+        <pre id="aiResult"></pre>
+        <div id="aiMeta" class="muted"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/ai-comment-summaries.js"></script>
+</body>
+</html>
+
